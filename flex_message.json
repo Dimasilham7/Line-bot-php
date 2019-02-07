@@ -1,0 +1,72 @@
+    {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Promo/Sale",
+            "weight": "bold"
+          }
+        ]
+      },
+      "hero": {
+        "type": "image",
+        "url": "https://image.freepik.com/vector-gratis/gran-banner-venta-venta-descuento-vector_67845-64.jpg",
+        "size": "full",
+        "aspectRatio": "4:3",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Berburu promo dan sale di sini!!!",
+            "size": "sm",
+            "color": "#FF8C00",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "oleh: Fraggaming store",
+            "size": "sm",
+            "color": "#FF8C00"
+          },
+          {
+            "type": "text",
+            "text": "Segera kamu daptkan untuk promo dan sale yang ada pada fraggaming store!",
+            "size": "sm",
+            "wrap": true,
+            "margin": "lg"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "Sale",
+              "text": "Sale"
+            }
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "Promo",
+              "text": "Promo"
+            }
+          }
+        ]
+      }
+    }
