@@ -37,7 +37,7 @@
     // buat route untuk url homepage
     $app->get('/', function($req, $res)
     {
-      return "lanjutkan!";
+      return "Semangat!";
     });
      
     // buat route untuk webhook
@@ -90,7 +90,7 @@
         if($userMessage == "Cara Pembayaran"){
             $ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
               new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://img.freepik.com/free-vector/payment-methods_1085-813.jpg?size=338&ext=jpg",
-              new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://goo.gl/niGrVq")),
+              new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"")),
               
               ]);
             $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('Tata cara pembayaran yang anda harus ikuti',$ImageCarouselTemplateBuilder);
@@ -98,41 +98,16 @@
             return $result->getHTTPStatus() . ' ' . $result->getRawBody();
             }
 
-       //Carousel Costumer service
-            $userMessage = $event['message']['text'];
-        if($userMessage == "Costumer Service"){
-            $ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
-              new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://png.pngtree.com/element_origin_min_pic/16/11/30/50603ba434026db0a37beb80260b14e1.jpg",
-              new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Hubungi CS',"https://api.whatsapp.com/send?phone=6289633767547")),
-              
-              ]);
-            $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('Costumer Service yang dapat anda hubungi',$ImageCarouselTemplateBuilder);
-            $result = $bot->replyMessage($event['replyToken'], $templateMessage);
-            return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-            }
-
-            //carousel tokopedia
-            $userMessage = $event['message']['text'];
-        if($userMessage == "tokopedia"){
-            $ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
-              new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://pbs.twimg.com/profile_images/1074565719788941312/A7aAWB3E_400x400.jpg",
-              new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Tokopedia',"https://www.tokopedia.com/fraggamingstore")),
-              
-              ]);
-            $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('Link yang dapat anda kunjungi',$ImageCarouselTemplateBuilder);
-            $result = $bot->replyMessage($event['replyToken'], $templateMessage);
-            return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-            }
-
+      
             //carousel promo
             $userMessage = $event['message']['text'];
             if($userMessage == "Promo"){
                 $carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
                   new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Promo Keyboard", "keyboard yang bisa kamu dapat","https://ecs7.tokopedia.net/img/cache/700/product-1/2018/9/1/1471759/1471759_bdf691c1-d3ae-4666-88a9-4ca6efa0c945.jpg",[
-                  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"https://goo.gl/8XmcqA"),
+                  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"url"),
                   ]),
                   new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Promo Headset", "Headset terbaik yang bisa kamu dapat","https://s.blanja.com/picspace/-1/-1/980.389_b76fd617ef46420797b27d8a43dbba79.jpg",[
-                  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"https://goo.gl/zFQ91t"),
+                  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"url"),
                   ]),
                   ]);
                 $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('promo yang bisa kamu dapat',$carouselTemplateBuilder);
@@ -145,10 +120,10 @@
                 if($userMessage == "Sale"){
                     $carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
                       new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("sale tahun baru", "rayakan tahun baru-mu dengan gaming gear yang menarik","https://ecs7.tokopedia.net/img/cache/700/product-1/2018/9/1/1471759/1471759_bdf691c1-d3ae-4666-88a9-4ca6efa0c945.jpg",[
-                      new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"https://goo.gl/8XmcqA"),
+                      new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"url"),
                       ]),
                       new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Sale imlek", "rayakan imlek mu dengan gaming gear yang baru!","https://s.blanja.com/picspace/-1/-1/980.389_b76fd617ef46420797b27d8a43dbba79.jpg",[
-                      new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"https://goo.gl/zFQ91t"),
+                      new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cek',"url"),
                       ]),
                       ]);
                     $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('sale yang bisa kamu dapatkan',$carouselTemplateBuilder);
